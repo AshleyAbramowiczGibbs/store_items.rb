@@ -4,8 +4,8 @@
 # puts "this toothbrush is #{toothbrush1[:color]}. It's made by #{toothbrush1[:brand]} and costs #{toothbrush1[:price] dollars}"
 
 class Toothbrushes
-attr_reader :color, :brand, :price, :instock
-attr_writer :color, :brand, :price, :instock
+  attr_reader :color, :brand, :price, :instock
+  attr_writer :color, :brand, :price, :instock
 
   def initialize(color, brand, price, instock)
     @color = color
@@ -14,17 +14,17 @@ attr_writer :color, :brand, :price, :instock
     @instock = instock
   end
 
-def info
-  puts "My toothbrush costs #{price}. It's made by #{brand} and it's #{color}."
-end
+  def info
+    puts "My toothbrush costs #{price}. It's made by #{brand} and it's #{color}."
+  end
 
-def on_sale
-  p @price / 2
-end
+  def on_sale
+    p @price / 2
+  end
 
-def instock_status
-  puts @instock
-end
+  def instock_status
+    puts @instock
+  end
 
 end
 
