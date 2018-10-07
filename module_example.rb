@@ -1,3 +1,14 @@
+module Honkable
+  def honk_horn
+    puts "Beeeeeeep!"
+  end
+end
+
+module Ringable
+  def ring_bell
+    puts "Ring ring!"
+  end
+
 class Vehicle
 
   def initialize(input_hash)
@@ -27,9 +38,6 @@ class Car < Vehicle
       @model = input_hash [:model]
     end
 
-  def honk_horn
-    puts "Beeeeeeep!"
-  end
 end
 
 class Bike < Vehicle
@@ -40,9 +48,10 @@ class Bike < Vehicle
     @weight = input_hash [:weight]
   end
 
-  def ring_bell
-    puts "Ring ring!"
-  end
+  include Ringable
+
+end
+
 end
 
 bike1 = Bike.new({type: "roadbike", weight: 40})
@@ -52,5 +61,3 @@ car1 = Car.new({fuel: "regular", make: "jeep", model: "wrangler"})
 car1.honk_horn
 p car1
 p bike1
-
-
